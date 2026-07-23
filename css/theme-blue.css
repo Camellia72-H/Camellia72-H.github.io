@@ -1,0 +1,11 @@
+/* 浅蓝主题补充 */
+:root {
+  --theme-accent: #6EB6E0;
+  --theme-accent-soft: #E3F2FB;
+}
+#board {
+  border: 1px solid rgba(110, 182, 224, 0.25);
+}
+a:hover { color: #5BB8E8 !important; }
+.navbar { box-shadow: 0 2px 12px rgba(110, 182, 224, 0.35); }
+.footer-inner a { color: #6EB6E0; }
