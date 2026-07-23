@@ -329,7 +329,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="欢迎来到我的博客"></span>
+            <span id="subtitle" data-typed-text="晚风穿过发梢，把今天轻轻翻成诗。,我想把温柔攒成星星，挂在你看不见的夜里。,世界很大，但我更爱窗边这一小杯月光。,写字的时候，把自己也写成一封未寄出的信。,喜欢慢一点的日子，像糖在茶里慢慢化开。,心里住着一位小诗人，专写没有观众的春天。,不必追赶喧闹，安静里也有花开的声音。,愿所有的告别，都像晚霞一样温柔明亮。,我以少女之名，收藏每一寸细碎的美好。,若生活是长卷，我只想把日常画得很轻。"></span>
           
         </div>
 
@@ -510,37 +510,9 @@
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        jQuery.ajax({
-          type: 'GET',
-          url: 'https://v1.hitokoto.cn',
-          headers: {},
-          dataType: 'json',
-          success: function(result) {
-            var apiText;
-            if (result) {
-              var keys = 'hitokoto'.split(',');
-              if (result instanceof Array) {
-                result = result[0];
-              }
-              for (const k of keys) {
-                var value = result[k];
-                if (typeof value === 'string') {
-                  apiText = value;
-                  break;
-                } else if (value instanceof Object) {
-                  result = value;
-                }
-              }
-            }
-            apiText ? typing(apiText) : typing(text);
-          },
-          error: function(xhr, status, error) {
-            if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn:', error);
-            }
-            typing(text);
-          }
-        })
+        var texts = ["晚风穿过发梢，把今天轻轻翻成诗。","我想把温柔攒成星星，挂在你看不见的夜里。","世界很大，但我更爱窗边这一小杯月光。","写字的时候，把自己也写成一封未寄出的信。","喜欢慢一点的日子，像糖在茶里慢慢化开。","心里住着一位小诗人，专写没有观众的春天。","不必追赶喧闹，安静里也有花开的声音。","愿所有的告别，都像晚霞一样温柔明亮。","我以少女之名，收藏每一寸细碎的美好。","若生活是长卷，我只想把日常画得很轻。"];
+        var idx = Math.floor(Math.random() * texts.length);
+        typing(texts[idx]);
       
     })(window, document);
   </script>
